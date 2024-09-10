@@ -1,0 +1,43 @@
+a {
+    color: whitesmoke;
+    text-decoration: none !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.banner {
+    background-image: url('./vasilije-ristovic-titanic-full-steam-web.jpg'); /* Ajoutez l'image de fond que vous souhaitez */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+.cta-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #0056b3;
+}

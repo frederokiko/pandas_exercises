@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Statistiques</h1>
+
+        <!-- Afficher l'image de la statistique actuelle -->
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='screenshots/' + current_image) }}" alt="Statistiques" width="auto">
+        </div>
+
+        <!-- Boutons pour naviguer entre les images -->
+        <div class="navigation-buttons">
+            <form action="/previous" method="get">
+                <button type="submit">Précédent</button>
+            </form>
+            <form action="/next" method="get">
+                <button type="submit">Suivant</button>
+            </form>
+        </div>
+
+        <!-- Lien pour revenir à la page principale -->
+        <a href="/">Retour à la prédiction</a>
+    </div>
+    <footer>
+        &copy; 2024 Frederokiko. Tous droits réservés. |
+        <a href="mailto:frederokiko@hotmail.com?subject=Demande d'information">Contactez-moi</a>
+    </footer>
+</body>
+</html>

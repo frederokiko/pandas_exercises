@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperBanque IA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Bouton pour accéder à la page des statistiques -->
+    <div class="top-right">
+        <form action="/stats">
+            <button type="submit" class="stats-button">📈Statistiques</button>
+        </form>
+    </div>
+    <div class="containerpredi">
+             
+        <h1>Prédiction de départ client</h1>
+        <form action="/predict" method="POST">
+                        <!-- 2. Utilisation de title pour afficher de l'aide au survol -->
+            <label for="gender">Genre:</label><br>
+            <select id="gender" name="gender" title="Choisissez Homme ou Femme" required>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+            </select><br>
+
+            <label for="age">Âge:</label><br>
+            <input type="number" id="age" name="age" placeholder="Exemple: 30" required>
+            <br>
+
+            <label for="has_cr_card">Possède une carte de crédit:</label><br>
+            <select id="has_cr_card" name="has_cr_card" title="Sélectionnez Oui ou Non" required>
+                <option value="Oui">Oui</option>
+                <option value="Non">Non</option>
+            </select><br>
+
+            <label for="is_active_member">Membre actif:</label><br>
+            <select id="is_active_member" name="is_active_member" title="Sélectionnez Oui ou Non" required>
+                <option value="Oui">Oui</option>
+                <option value="Non">Non</option>
+            </select><br>
+
+            <label for="country">Pays:</label><br>
+            <select id="country" name="country" title="Sélectionnez un pays" required>
+                <option value="France">France</option>
+                <option value="Allemagne">Allemagne</option>
+                <option value="Espagne">Espagne</option>
+            </select><br>
+
+            <label for="tenure">Ancienneté (Tenure):</label><br>
+            <input type="number" id="tenure" name="tenure" placeholder="Entrez un nombre entier en années." required>
+            <br>
+
+            <!-- 1. Utilisation de placeholder -->
+            <label for="credit_score">Credit Score:</label><br>
+            <input type="text" id="credit_score" name="credit_score" placeholder="Entre 300 et 850" required><br>
+
+            <!-- 4. Utilisation de datalist pour fournir des suggestions -->
+            <label for="balance">Balance:</label><br>
+            <input type="text" id="balance" name="balance" list="balance-list" placeholder="Entrez la balance en €" required>
+            <datalist id="balance-list">
+                <option value="0">
+                <option value="1000">
+                <option value="5000">
+                <option value="10000">
+            </datalist>
+            <br>
+
+            <label for="num_of_products">Nombre de produits:</label><br>
+            <input type="number" id="num_of_products" name="num_of_products" max="4" placeholder="Ex: 1, 2, 3 ou 4" required><br>
+
+            <label for="estimated_salary">Salaire estimé:</label><br>
+            <input type="text" id="estimated_salary" name="estimated_salary" placeholder="Entrez le salaire en €" required><br>
+
+            <button type="submit">Prédire</button>
+        </form>
+        <div class="result">
+            {% if prediction_text %}
+                <h2>{{ prediction_text }}</h2>
+            {% endif %}
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Frederokiko. Tous droits réservés. |
+        <a href="mailto:frederokiko@hotmail.com?subject=Demande d'information">Contactez-moi</a>
+    </footer>
+</body>
+</html>
+
